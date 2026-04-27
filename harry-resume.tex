@@ -1,0 +1,264 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    \textbf{\Huge \scshape Harry Pan} \\ \vspace{1pt}
+    % \small (503) 621-6778 $|$
+    \href{mailto:pan.xingzhi@gmail.com}{\underline{pan.xingzhi@gmail.com}} $|$
+    \href{https://linkedin.com/in/harryxpan}{\underline{linkedin.com/in/harryxpan}}
+\end{center}
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Staff Software Engineer}{Jun 2025 -- Apr 2026}
+      {Thoughtful AI}{Remote}
+      \vspace{2pt}\par
+      Designed system architecture to evolve the company's agentic AI platform:
+      \resumeItemListStart
+      \resumeItem{Architected multi-tenant serverless database cluster enabling onboarding of 8 new customers with secure access from Temporal and Robocloud workloads}
+      \resumeItem{Built provisioning agent that automates tenant onboarding to the database cluster, reducing setup time from 2 hours to 10 minutes}
+      \resumeItem{Designed and implemented analytics lakehouse data pipeline supporting 3 customers}
+      \resumeItem{Built observability pipeline shipping AWS CloudWatch metrics to HyperDX via Kinesis Firehose, establishing a single pane of glass across 5 services}
+      \resumeItem{Enabled data exchange between Thoughtful and sister companies by implementing cross-account Kafka connectivity}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Principal Engineer}{Sep 2024 -- Jun 2025}
+      {Galileo}{San Francisco Bay Area}
+      \vspace{2pt}\par
+      Led system performance optimization initiatives across a platform serving 2M+ daily requests:
+      \resumeItemListStart
+        \resumeItem{Architected load testing framework and observability stack adopted by 3 engineering teams to establish performance baselines and catch regressions pre-deployment}
+        \resumeItem{Reduced end-to-end API latency by 30\% (800ms to 560ms p95) by eliminating redundant database queries through query consolidation and caching}
+        \resumeItem{Decreased task queue latency by 40\% by migrating Celery backend from RabbitMQ to Redis, cutting infrastructure costs by \$4K/month}
+        \resumeItem{Increased LLM inference throughput by 80\% (120 to 216 req/sec) by implementing dynamic request batching, supporting 2x traffic growth without infrastructure expansion}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Principal Engineer}{Jul 2023 -- Jul 2024}
+      {FLYR}{San Francisco Bay Area}
+      \vspace{2pt}\par
+      Led the Cloud Center of Excellence in a cross-functional capacity to establish engineering best practices, enhance efficiency, and drive cost reduction.
+      \resumeItemListStart
+        \resumeItem{Achieved monthly savings of \$170K through strategic rightsizing and optimization of BigQuery, GCS, CI/CD, and more.}
+        \resumeItem{Delivered cloud unit economics insights to key stakeholders in the C-suite, finance, and accounting departments to inform product pricing and budget planning.}
+        \resumeItem{Enhanced engineering productivity by fostering a culture of ownership and implementing self-service practices.}
+        \resumeItem{Oversaw SaaS vendor contracts, including those with GCP, Confluent Cloud, Datadog, Docker Hub, and others.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Senior Solutions Architect}{Dec 2020 -- Jun 2023}
+      {Amazon Web Services}{San Francisco Bay Area}
+      \resumeItemListStart
+        \resumeItem{Scaled startup customer's analytics system to 2x customer capacity while reducing their monthly cloud spend by \$500K}
+        \resumeItem{Selected to AWS Machine Learning Field Committee; guided customer teams in architecting production ML solutions}
+        \resumeItem{Authored \href{https://aws.amazon.com/blogs/machine-learning/increase-your-content-reach-with-automated-document-to-speech-conversion-using-amazon-ai-services/}{\underline{an official AWS ML blog post}} and contributed to \href{https://github.com/aws-samples/scanned-documents-to-speech}{\underline{AWS public code samples}}}
+        \resumeItem{Built executive-level trust with C-suite and engineering leaders across 10 enterprise accounts}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Software Development Engineer, Alexa AI}{Dec 2018 -- Dec 2020}
+      {Amazon}{San Francisco Bay Area}
+      \resumeItemListStart
+        \resumeItem{Co-led development of Alexa AI's Natural Language Understanding MLOps toolchain, used by hundreds of applied scientists, research scientists, and engineers across the org}
+        \resumeItem{Spearheaded the cross-team operational readiness initiative for Amazon's 2019 Prime Day, coordinating ~50 individuals across 10 teams}
+        \resumeItem{Partnered with security engineers to review Alexa AI products handling sensitive customer data}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Sr. Software Engineer / Team Lead}{Jul 2012 -- Nov 2018}
+      {Comscore}{Portland, OR}
+      \vspace{2pt}\par
+      Developed distributed systems analyzing billions of TV tuning records daily across a 1M+ line Perl/C++/SQL codebase.
+      \resumeItemListStart
+        \resumeItem{Developed and maintained in-house distributed systems used to analyze billions of TV tuning records daily. }
+        \resumeItem{Built data verification processes with QA and turned data science prototypes into production products}
+        \resumeItem{Trained data scientists to use OpenGrok to map methodology to code}
+        \resumeItem{Collaborated with infrastructure team to migrate production systems to AWS}
+        \resumeItem{Supported Chinese joint venture Sinotrak in hiring, training, and onboarding data from Chinese cable operators}
+        \resumeItem{Contributed \href{https://github.com/oracle/opengrok/commits?author=harryxp}{\underline{5K+ lines}} to \href{https://oracle.github.io/opengrok/}{\underline{OpenGrok}} and introduced it to the team to navigate and understand the legacy codebase}
+      \resumeItemListEnd
+
+
+% -----------Multiple Positions Heading-----------
+%    \resumeSubSubheading
+%     {Software Engineer I}{Oct 2014 - Sep 2016}
+%     \resumeItemListStart
+%        \resumeItem{Apache Beam}
+%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
+%     \resumeItemListEnd
+%    \resumeSubHeadingListEnd
+%-------------------------------------------
+
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+% \section{Projects}
+%     \resumeSubHeadingListStart
+%       \resumeProjectHeading
+%           {\textbf{Gitlytics} $|$ \emph{Python, Flask, React, PostgreSQL, Docker}}{June 2020 -- Present}
+%           \resumeItemListStart
+%             \resumeItem{Developed a full-stack web application using with Flask serving a REST API with React as the frontend}
+%             \resumeItem{Implemented GitHub OAuth to get data from user’s repositories}
+%             \resumeItem{Visualized GitHub data to show collaboration}
+%             \resumeItem{Used Celery and Redis for asynchronous tasks}
+%           \resumeItemListEnd
+%     \resumeSubHeadingListEnd
+
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, Java, C, C++, SQL, JavaScript, Scala, Perl, Haskell} \\
+     \textbf{Cloud \& Infrastructure}{: AWS, GCP, Kubernetes, Terraform, Docker} \\
+     \textbf{Data \& ML}{: LLMs, MLOps, Apache Spark, BigQuery, PostgreSQL, Redis, Celery} \\
+     \textbf{Observability \& Tools}{: Datadog, Git, Linux} \\
+    }}
+ \end{itemize}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Portland State University}{Portland, OR}
+      {M.S. in Computer Science}{Sep 2010 -- Jul 2012}
+  \resumeSubHeadingListEnd
+
+
+%-----------CERTIFICATIONS-----------
+\section{Certifications}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \href{https://www.credly.com/badges/7d05e153-7ef7-4d11-9730-408b166b6ba5/public_url}{\underline{Certified Kubernetes Administrator}} \hfill Oct 2023 \\
+     \href{https://www.coursera.org/account/accomplishments/specialization/certificate/2KXDWZY9AS3L}{\underline{Coursera -- Machine Learning Engineering for Production (MLOps)}} \hfill Mar 2023 \\
+     \href{https://www.coursera.org/account/accomplishments/specialization/certificate/XY86VFD9C8EG}{\underline{Stanford University -- Machine Learning Specialization}} \hfill Feb 2023 \\
+     \href{https://www.credly.com/badges/b457396a-6c1b-42f5-aadc-fd8bdfbd5556/linked_in_profile}{\underline{AWS Certified Machine Learning -- Specialty}} \hfill Nov 2022 \\
+     \href{https://www.credly.com/badges/7e969bbd-83ea-4dbe-9cb4-9d64c7ee907d?source=linked_in_profile}{\underline{AWS Certified Solutions Architect -- Professional}} \hfill May 2022 \\
+     \href{https://www.credly.com/badges/30695c71-903b-42c9-a298-21b7e8989a9a?source=linked_in_profile}{\underline{AWS Certified Developer -- Associate}} \hfill Dec 2021 \\
+     \href{https://www.credly.com/badges/393cd15e-5862-4d80-b3e5-429d2ab2b174?source=linked_in_profile}{\underline{AWS Partner: Cloud Economics Accreditation}} \hfill Mar 2021 \\
+    }}
+ \end{itemize}
+
+
+%-------------------------------------------
+\end{document}
